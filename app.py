@@ -10,7 +10,8 @@ app = Flask(__name__)
 def time():
     locale = request.args.get("locale", 'en_GB')
     date_time = datetime.now()
-    return format_time(date_time, locale=locale)
+    locale_time = format_time(date_time, locale=locale)
+    return f'<h1 style="font-size:13em;text-align:center">{locale_time}</h1>'
 
 
 if __name__ == '__main__':
